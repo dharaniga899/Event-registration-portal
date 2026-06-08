@@ -402,4 +402,83 @@ Purpose
 
 The UML diagrams used in this project follow standards established by the Object Management Group (OMG) and recognized by the International Organization for Standardization (ISO). Standard UML notation ensures consistency, clarity, and maintainability throughout the software development lifecycle.
 
+Database Requirement Analysis
+Overview
+
+The Event Registration Portal requires a database to store and manage information related to users, events, registrations, and administrative activities. The database ensures secure storage, easy retrieval, and efficient management of data.
+
+Database Name
+
+event_registration_db
+
+Entities and Tables
+1. Users Table
+
+Stores participant information.
+
+Field Name	Data Type	Description
+user_id	INT (PK)	Unique user ID
+name	VARCHAR(100)	User's full name
+email	VARCHAR(100)	User email address
+phone	VARCHAR(15)	Contact number
+password	VARCHAR(255)	Encrypted password
+created_at	DATETIME	Account creation date
+2. Admin Table
+
+Stores administrator details.
+
+Field Name	Data Type	Description
+admin_id	INT (PK)	Unique admin ID
+username	VARCHAR(50)	Admin username
+password	VARCHAR(255)	Admin password
+3. Events Table
+
+Stores event information.
+
+Field Name	Data Type	Description
+event_id	INT (PK)	Unique event ID
+event_name	VARCHAR(150)	Name of the event
+description	TEXT	Event description
+event_date	DATE	Event date
+venue	VARCHAR(150)	Event location
+capacity	INT	Maximum participants
+4. Registrations Table
+
+Stores participant registrations.
+
+Field Name	Data Type	Description
+registration_id	INT (PK)	Unique registration ID
+user_id	INT (FK)	Reference to Users table
+event_id	INT (FK)	Reference to Events table
+registration_date	DATETIME	Date of registration
+status	VARCHAR(20)	Registration status
+Relationships
+One User can register for multiple Events.
+One Event can have multiple Participants.
+Admin manages Events and Registrations.
+Users and Events are connected through the Registrations table.
+Database Constraints
+Primary Keys (PK) ensure unique identification of records.
+Foreign Keys (FK) maintain relationships between tables.
+Email addresses should be unique.
+Event capacity should not be exceeded.
+Required fields cannot be left empty.
+Database Operations
+
+The database supports the following operations:
+
+Create new user accounts.
+Store and manage event details.
+Register users for events.
+Update registration status.
+Retrieve participant information.
+Generate registration reports.
+Delete or modify event records.
+Expected Benefits
+Centralized data management.
+Improved data accuracy.
+Faster event registration process.
+Secure storage of user information.
+Efficient report generation and tracking.
+
 
