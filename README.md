@@ -480,5 +480,58 @@ Improved data accuracy.
 Faster event registration process.
 Secure storage of user information.
 Efficient report generation and tracking.
+EVENT REGISTRATION PORTAL – ER DIAGRAM
+
++------------------+
+|      USER        |
++------------------+
+| user_id (PK)     |
+| name             |
+| email            |
+| phone            |
+| password         |
++------------------+
+         |
+         | Registers
+         |
+         v
++----------------------+
+|    REGISTRATION      |
++----------------------+
+| registration_id (PK) |
+| user_id (FK)         |
+| event_id (FK)        |
+| registration_date    |
+| status               |
++----------------------+
+         ^
+         |
+         | For
+         |
++------------------+
+|      EVENT       |
++------------------+
+| event_id (PK)    |
+| event_name       |
+| description      |
+| date             |
+| venue            |
+| capacity         |
++------------------+
+         ^
+         |
+         | Managed By
+         |
++------------------+
+|      ADMIN       |
++------------------+
+| admin_id (PK)    |
+| name             |
+| email            |
+| password         |
++------------------+
+
+PK = Primary Key
+FK = Foreign Key
 
 
