@@ -1,1 +1,62 @@
+# ER Diagram – Event Registration Portal
 
+```text
++------------------+
+|      USER        |
++------------------+
+| user_id (PK)     |
+| name             |
+| email            |
+| phone            |
+| password         |
++------------------+
+          |
+          | Registers
+          | 1:M
+          v
++----------------------+
+|    REGISTRATION      |
++----------------------+
+| registration_id (PK) |
+| user_id (FK)         |
+| event_id (FK)        |
+| registration_date    |
+| status               |
++----------------------+
+          ^
+          |
+          | M:1
+          | For
+          |
++------------------+
+|      EVENT       |
++------------------+
+| event_id (PK)    |
+| event_name       |
+| description      |
+| date             |
+| venue            |
+| capacity         |
++------------------+
+          ^
+          |
+          | Managed By
+          | M:1
+          |
++------------------+
+|      ADMIN       |
++------------------+
+| admin_id (PK)    |
+| name             |
+| email            |
+| password         |
++------------------+
+
+PK = Primary Key
+FK = Foreign Key
+
+Relationships:
+1. One User can register for many Events.
+2. One Event can have many Registrations.
+3. One Admin can manage many Events.
+```
