@@ -480,8 +480,11 @@ Improved data accuracy.
 Faster event registration process.
 Secure storage of user information.
 Efficient report generation and tracking.
-EVENT REGISTRATION PORTAL – ER DIAGRAM
 
+
+
+EVENT REGISTRATION PORTAL 
+ER DIAGRAM 
 +------------------+
 |      USER        |
 +------------------+
