@@ -481,60 +481,46 @@ Faster event registration process.
 Secure storage of user information.
 Efficient report generation and tracking.
 
+## ER Diagram Description
 
+The Entity Relationship (ER) Diagram represents the database structure of the Event Case Management Suite. It illustrates the entities involved in the system, their attributes, and the relationships between them.
 
-EVENT REGISTRATION PORTAL 
-ER DIAGRAM 
-+------------------+
-|      USER        |
-+------------------+
-| user_id (PK)     |
-| name             |
-| email            |
-| phone            |
-| password         |
-+------------------+
-         |
-         | Registers
-         |
-         v
-+----------------------+
-|    REGISTRATION      |
-+----------------------+
-| registration_id (PK) |
-| user_id (FK)         |
-| event_id (FK)        |
-| registration_date    |
-| status               |
-+----------------------+
-         ^
-         |
-         | For
-         |
-+------------------+
-|      EVENT       |
-+------------------+
-| event_id (PK)    |
-| event_name       |
-| description      |
-| date             |
-| venue            |
-| capacity         |
-+------------------+
-         ^
-         |
-         | Managed By
-         |
-+------------------+
-|      ADMIN       |
-+------------------+
-| admin_id (PK)    |
-| name             |
-| email            |
-| password         |
-+------------------+
+### Entities
 
-PK = Primary Key
-FK = Foreign Key
+**User**
+- Stores user information such as user ID, name, email, phone number, and password.
+- Users can create and track event-related cases.
+
+**Case**
+- Contains case details including title, description, priority, status, and creation date.
+- Each case is associated with a user and an event.
+
+**Event**
+- Stores event information such as event name, date, venue, and description.
+- Multiple cases can be linked to a single event.
+
+**Admin**
+- Responsible for managing events, assigning staff, and monitoring case progress.
+
+**Staff**
+- Handles assigned cases and updates their status.
+- Staff members work under the supervision of the administrator.
+
+**Case Update**
+- Maintains the history of case activities, remarks, and status changes.
+- Each update is linked to a specific case and staff member.
+
+### Relationships
+
+- One User can create multiple Cases.
+- One Event can be associated with multiple Cases.
+- One Admin can manage multiple Events.
+- One Admin can assign multiple Staff members.
+- One Staff member can handle multiple Cases.
+- One Case can have multiple Case Updates.
+
+### Purpose
+
+The ER Diagram helps in understanding the database design and relationships among system entities. It serves as a blueprint for implementing the database schema and ensures efficient data management within the Event Case Management Suite.
 
 
