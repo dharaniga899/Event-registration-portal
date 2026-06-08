@@ -1,1 +1,64 @@
+# UML Class Diagram – Event Registration Portal
 
+```text
++--------------------+
+|       User         |
++--------------------+
+| userId             |
+| name               |
+| email              |
+| phone              |
+| password           |
++--------------------+
+| registerEvent()    |
+| viewEvents()       |
+| updateProfile()    |
++--------------------+
+          |
+          | registers
+          |
+          v
++--------------------+
+|   Registration     |
++--------------------+
+| registrationId     |
+| registrationDate   |
+| status             |
++--------------------+
+| register()         |
+| cancel()           |
++--------------------+
+          |
+          | for
+          |
+          v
++--------------------+
+|       Event        |
++--------------------+
+| eventId            |
+| eventName          |
+| description        |
+| date               |
+| venue              |
+| capacity           |
++--------------------+
+| createEvent()      |
+| updateEvent()      |
+| deleteEvent()      |
++--------------------+
+          ^
+          |
+          | manages
+          |
++--------------------+
+|       Admin        |
++--------------------+
+| adminId            |
+| name               |
+| email              |
+| password           |
++--------------------+
+| manageEvents()     |
+| viewRegistrations()|
++--------------------+
+```
